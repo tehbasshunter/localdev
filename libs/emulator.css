@@ -1,0 +1,154 @@
+.event-emulator {
+  display: inline-block;
+  position: fixed;
+  bottom: 20px;
+  left: 330px;
+  z-index: 101;
+}
+
+.event-emulator {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.event-emulator .emulator-btn {
+  position: relative;
+  z-index: 102;
+  opacity: 0.4;
+  overflow: visible;
+  min-width: 56px;
+  min-height: 56px;
+}
+
+.event-emulator .emulator-btn,
+.event-emulator .events .event-btn .md-button,
+.event-emulator [class^="event-emulator-"]>.event-btn .md-button {
+  overflow: visible;
+}
+
+.event-emulator .emulator-btn+span,
+.event-emulator .events .event-btn .md-button+span,
+.event-emulator [class^="event-emulator-"]>.event-btn .md-button+span {
+  padding: 4px 6px;
+  margin-right: 6px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  line-height: 1;
+  text-transform: none;
+  font-weight: normal;
+  font-size: 14px;
+  border-radius: 2px;
+}
+
+.event-emulator .emulator-btn md-icon,
+.event-emulator .events .event-btn .md-button md-icon,
+.event-emulator [class^="event-emulator-"]>.event-btn .md-button md-icon {
+  margin: auto;
+}
+
+.event-emulator .emulator-twitter-btn {
+  padding-top: 5px;
+}
+
+.event-emulator .events {
+  position: absolute;
+  bottom: 62px;
+  left: 16px;
+  width: 40px;
+  height: 0;
+  overflow: hidden;
+}
+
+.event-emulator .events>.event-btn {
+  position: relative;
+  opacity: 0;
+  z-index: 1;
+}
+
+.event-emulator .events>.event-btn:not(.md-button) {
+  width: 50px;
+}
+
+.event-emulator .events>.event-btn:after {
+  max-width: 0;
+  transition: max-width 0.2s ease-out;
+}
+
+.event-emulator .events .options {
+  position: relative;
+  z-index: 21;
+  opacity: 0;
+  display: none;
+  transition: 0.2s ease;
+}
+
+.event-emulator .events .options .option {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-right: 6px;
+}
+
+.event-emulator .events .options .option-max,
+.event-emulator .events .options .option-custom {
+  margin-left: 16px;
+}
+
+.event-emulator .events .options .option .md-button {
+  margin-left: 0;
+}
+
+.event-emulator:hover {
+  width: 700px;
+  height: 430px;
+}
+
+.event-emulator:hover .emulator-btn {
+  max-width: 20em;
+}
+
+.event-emulator:hover .events {
+  height: auto;
+  overflow: unset;
+  width: 100%;
+}
+
+.event-emulator:hover .events>.event-btn,
+.event-emulator:hover [class^="event-emulator-"]>.event-btn {
+  width: 690px;
+  opacity: 0.6;
+  overflow: visible;
+  margin-left: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.event-emulator:hover .events>.event-btn>.md-button,
+.event-emulator:hover [class^="event-emulator-"]>.event-btn>.md-button {
+  margin-left: 0;
+}
+
+.event-emulator:hover .events>.event-btn md-icon,
+.event-emulator:hover [class^="event-emulator-"]>.event-btn md-icon {
+  cursor: pointer;
+}
+
+.event-emulator:hover .events>.event-btn:hover,
+.event-emulator:hover [class^="event-emulator-"]>.event-btn:hover {
+  opacity: 1;
+}
+
+.event-emulator:hover .events>.event-btn:hover .options,
+.event-emulator:hover [class^="event-emulator-"]>.event-btn:hover .options {
+  opacity: 1;
+  display: flex;
+}
+
+.event-emulator-twitch-events,
+.event-emulator-youtube-events {
+  display: inline-block;
+  width: 100%;
+}

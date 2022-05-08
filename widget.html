@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>StreamElements Playground</title>
+    <script>
+        //
+        // IF YOU WANT TO USE STREAMELEMENTS OVERLAYEDITOR EVENT EMITER - PASTE YOUR JWT TOKEN BELOW
+        //
+        let JWT = "";
+        //
+        // SET YOUR CHANNEL NAME BELOW
+        //
+        let channelName="MyFancyChannel";
+    </script>
+    <link rel="stylesheet" href="libs/emulator.css">
+    <link rel="stylesheet" href="libs/icons.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="widget.json.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <script src="libs/websocket.js"></script>
+    <script src="libs/simulation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@1.3.4/dist/interact.min.js"></script>
+    <script src="libs/resize.js"></script>
+</head>
+<body>
+    <link rel="stylesheet" href="widget.css">
+    <div class=widget>
+        <!--
+        PLACE YOUR WIDGET.HTML CODE BELOW
+        -->
+
+
+
+
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+        <div class="main-container"></div>
+
+
+
+
+        
+        <!--
+        PLACE YOUR WIDGET.HTML CODE ABOVE
+        -->
+    </div>
+    <script src="widget.js"></script>
+    <div class="event-emulator" style=""><button class="md-fab emulator-btn md-button md-ink-ripple" type="button"
+            ng-transclude="" data-tooltip="Event emulator">
+            <md-icon class="material-icons" role="img" aria-label="notifications">notifications</md-icon>
+            <div class="md-ripple-container" style=""></div>
+        </button>
+        <div class="events">
+            <!---->
+            <div class="event-emulator-twitch-events" ng-if="::(vm.provider === 'twitch')" style="">
+                <!---->
+                <!---->
+                <div class="event-btn"><button class="md-fab event-btn md-mini event-btn emulator-follower md-button md-ink-ripple"
+                        type="button" ng-transclude="" onclick="emulateNew('follower')">
+                        <md-icon class="material-icons" role="img" aria-label="favorite">favorite</md-icon>
+                    </button><span>Emulate follower event</span></div>
+                <div class="event-btn"><button class="md-fab event-btn md-mini event-btn emulator-store md-button md-ink-ripple"
+                        type="button" ng-transclude="" onclick="emulateNew('redemption')">
+                        <md-icon class="material-icons" role="img" aria-label="store">store</md-icon>
+                    </button><span>Emulate item redemption</span></div>
+                <div class="emulator-sub event-btn"><button class="md-fab md-mini md-button md-ink-ripple" type="button"
+                        ng-transclude="" onclick="emulateNew('subscriber')">
+                        <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                    </button><span>Emulate subscriber event</span>
+                    <div class="options">
+                        <div class="option"><button class="md-fab md-mini md-accent md-button md-ink-ripple" type="button"
+                                ng-transclude="" onclick="emulateNew('subscriber', 1, '1000')">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>1</span></div>
+                        <div class="option"><button class="md-fab md-mini md-accent option-max md-button md-ink-ripple"
+                                type="button" ng-transclude="" onclick="emulateNew('subscriber', 'gift')">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>Gift</span></div>
+                        
+                    </div>
+                </div>
+                <div class="emulator-host event-btn"><button class="md-fab md-mini md-button md-ink-ripple" type="button"
+                        ng-transclude="" onclick="emulateNew('host')">
+                        <md-icon class="material-icons" role="img" aria-label="screen_share">screen_share</md-icon>
+                    </button><span>Emulate host event</span>
+                    <div class="options">
+                        <div class="option"><button class="md-fab md-mini md-accent md-button md-ink-ripple" type="button"
+                                ng-transclude="" onclick="emulateNew('host', 10)">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>10</span></div>
+                        <div class="option"><button class="md-fab md-mini md-accent option-max md-button md-ink-ripple"
+                                type="button" ng-transclude="" onclick="emulateNew('host', 50)">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>50</span></div>
+                        
+                    </div>
+                </div>
+                <div class="emulator-raid event-btn"><button class="md-fab md-mini md-button md-ink-ripple" type="button"
+                        ng-transclude="" onclick="emulateNew('raid')">
+                        <md-icon class="material-icons" role="img" aria-label="record_voice_over">record_voice_over</md-icon>
+                    </button><span>Emulate raid event</span>
+                    <div class="options">
+                        <div class="option"><button class="md-fab md-mini md-accent md-button md-ink-ripple" type="button"
+                                ng-transclude="" onclick="emulateNew('raid', 10)">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>10</span></div>
+                        <div class="option"><button class="md-fab md-mini md-accent option-max md-button md-ink-ripple"
+                                type="button" ng-transclude="" onclick="emulateNew('raid', 50)">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>50</span></div>
+                        
+                    </div>
+                </div>
+                <div class="emulator-cheer event-btn"><button class="md-fab md-mini md-button md-ink-ripple" type="button"
+                        ng-transclude="" onclick="emulateNew('cheer')">
+                        <md-icon class="material-icons" role="img" aria-label="brightness_high">brightness_high</md-icon>
+                    </button><span>Emulate cheer event</span>
+                    <div class="options">
+                        <div class="option"><button class="md-fab md-mini md-accent md-button md-ink-ripple" type="button"
+                                ng-transclude="" onclick="emulateNew('cheer', 1000)">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>1k</span></div>
+                        <div class="option"><button class="md-fab md-mini md-accent option-max md-button md-ink-ripple"
+                                type="button" ng-transclude="" onclick="emulateNew('cheer', 5000)">
+                                <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            </button><span>5k</span></div>
+                        
+                    </div>
+                </div>
+            </div>
+            <!---->
+            <!---->
+            <div class="emulator-tip event-btn"><button class="md-fab md-mini md-button md-ink-ripple" type="button"
+                    ng-transclude="" onclick="emulateNew('tip')">
+                    <md-icon class="material-icons" role="img" aria-label="attach_money">attach_money</md-icon>
+                </button><span>Emulate tip event</span>
+                <div class="options">
+                    <div class="option"><button class="md-fab md-mini md-accent md-button md-ink-ripple" type="button"
+                            ng-transclude="" onclick="emulateNew('tip', 10)">
+                            <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                            <div class="md-ripple-container" style=""></div>
+                        </button><span>10</span></div>
+                    <div class="option"><button class="md-fab md-mini md-accent option-max md-button md-ink-ripple"
+                            type="button" ng-transclude="" onclick="emulateNew('tip', 50)">
+                            <md-icon class="material-icons" role="img" aria-label="grade">grade</md-icon>
+                        </button><span>50</span></div>
+                    
+                </div>
+            </div>
+            <div class="emulator-tip event-btn"><button class="md-fab md-mini md-button md-ink-ripple" type="button"
+                ng-transclude="" onclick="emulateSessionUpdate()">
+                <md-icon class="material-icons" role="img" aria-label="attach_money">attach_money</md-icon>
+            </button><span>Emulate Session Update</span>
+        </div>
+            <!---->
+        </div>
+    </div>
+    <script>
+    emulateInit();
+    </script>
+</body>
+
+</html>
