@@ -51,10 +51,6 @@ window.addEventListener('onEventReceived', function (obj) {
             }
 
         }
-    } else if (listener === 'host') {
-        if (includeHosts && minHost <= event.amount) {
-            addEvent('host', `Host ${event.amount.toLocaleString()}`, event.name);
-        }
     } else if (listener === 'cheer') {
         if (includeCheers && minCheer <= event.amount) {
             addEvent('cheer', `${event.amount.toLocaleString()} Bits`, event.name);
@@ -86,8 +82,6 @@ window.addEventListener('onWidgetLoad', function (obj) {
     eventsLimit = fieldData.eventsLimit;
     includeFollowers = (fieldData.includeFollowers === "yes");
     includeRedemptions = (fieldData.includeRedemptions === "yes");
-    includeHosts = (fieldData.includeHosts === "yes");
-    minHost = fieldData.minHost;
     includeRaids = (fieldData.includeRaids === "yes");
     minRaid = fieldData.minRaid;
     includeSubs = (fieldData.includeSubs === "yes");
@@ -127,10 +121,6 @@ window.addEventListener('onWidgetLoad', function (obj) {
                     giftCount = event.count;
                 }
                 giftCount--;
-            }
-        } else if (event.type === 'host') {
-            if (includeHosts && minHost <= event.amount) {
-                addEvent('host', `Host ${event.amount.toLocaleString()}`, event.name);
             }
         } else if (event.type === 'cheer') {
             if (includeCheers && minCheer <= event.amount) {

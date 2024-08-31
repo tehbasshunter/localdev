@@ -112,7 +112,6 @@ let session = {
                 "type": "follower"
             }],
             "subscriber-recent": [],
-            "host-recent": [],
             "raid-recent": [],
             "cheer-recent": [],
             "tip-recent": [{
@@ -276,16 +275,6 @@ let events = {
             "tier": "prime",
             "message": "Do not fear a man that spams 1000 memes, instead fear a man that spams a meme 1000 times",
             "originalEventName": "subscriber-latest"
-        }
-    },
-    "host": {
-        "listener": "host-latest",
-        "event": {
-            "type": "host",
-            "name": "Zorina",
-            "amount": 43,
-            "isTest": true,
-            "originalEventName": "host-latest"
         }
     },
     "raid": {

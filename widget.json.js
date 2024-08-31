@@ -1,4 +1,4 @@
-let fieldData={
+:#let fieldData={
     "eventsLimit": {
         "type": "number",
         "label": "Limit displayed events to:",
@@ -21,17 +21,6 @@ let fieldData={
             "yes": "Yes",
             "no": "No"
         }
-    },
-    "includeHosts": {
-        "type": "dropdown",
-        "label": "Display hosts:",
-        "value": "yes",
-        "options": {
-            "yes": "Yes",
-            "no": "No"
-        }
-    },
-    "minHost": {
         "type": "number",
         "label": "Minimum amount of hosting viewers:",
         "value": 1
